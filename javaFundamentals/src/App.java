@@ -46,7 +46,7 @@ public class App {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println(plurarizeAnimal("dog", 1));
+        System.out.println(plurarizeAnimal("dog", 3));
         System.out.println(flipNHeads(4));
         clock();
     }
