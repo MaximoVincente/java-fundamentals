@@ -18,8 +18,7 @@ public class App {
     public static String flipNHeads(int n) {
         int counter = 0;
         int totalCounter = 0;
-
-        
+ 
         while (counter < n) {
             totalCounter++;
         if (Math.random() < .5) {
@@ -38,7 +37,6 @@ public class App {
     }
     
     public static void clock() throws InterruptedException{
-
         while (true){
             LocalTime now = LocalTime.now();
             String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
@@ -48,7 +46,6 @@ public class App {
     }
 
     public static void main(String[] args) throws InterruptedException {
-
         System.out.println(plurarizeAnimal("dog", 1));
         System.out.println(flipNHeads(4));
         clock();
