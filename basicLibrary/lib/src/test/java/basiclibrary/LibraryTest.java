@@ -38,8 +38,9 @@ class LibraryTest {
     }
 
     @Test void averageOfArray() {
-        Library sut = new Library();
+
         double[] result = {3, 5, 9};
+        Library sut = new Library();
         double averageResult = sut.calculateAverage(result);
         System.out.println(averageResult);
         assertTrue(averageResult == 5.666666666666667);
