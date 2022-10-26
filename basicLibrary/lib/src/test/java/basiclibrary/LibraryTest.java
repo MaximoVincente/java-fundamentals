@@ -39,25 +39,39 @@ class LibraryTest {
 
     @Test void averageOfArray() {
 
-        double[] result = {3, 5, 9};
+        int[] result = {2, 2, 2};
         Library sut = new Library();
-        double averageResult = sut.calculateAverage(result);
+        int averageResult = sut.calculateAverage(result);
         System.out.println(averageResult);
-        assertTrue(averageResult == 5.666666666666667);
+        assertTrue(averageResult == 2);
     }
 
     @Test
     void minAverageArray() {
         Library sut = new Library();
-        double[][] weeklyMonthTemperatures = {
+        int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
                 {57, 65, 65, 70, 72, 65, 51},
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        double[] newArr =   {55, 54, 60, 53, 59, 57, 61};
-        double[] result = sut.lowestAverageTemp(weeklyMonthTemperatures);
+        int[] newArr =   {55, 54, 60, 53, 59, 57, 61};
+        int[] result = sut.lowestAverageTemp(weeklyMonthTemperatures);
         assertArrayEquals(result, newArr);
+    }
+
+    @Test
+    void minMaxTemperatures() {
+        Library sut = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        String response = "High: 72" + "\n" + "Low: 51" + "\n" + "Never saw temperature: 63" + "\n" + "Never saw temperature: 67" + "\n" + "Never saw temperature: 68" + "\n" + "Never saw temperature: 69";
+        String result = sut.minMaxTemp(weeklyMonthTemperatures);
+        assertEquals(result, response);
     }
 
 }

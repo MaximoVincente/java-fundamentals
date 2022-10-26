@@ -3,8 +3,9 @@
  */
 package basiclibrary;
 
-import java.util.ArrayList;
-import java.util.Random;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.*;
 
 
 public class Library {
@@ -29,10 +30,10 @@ public class Library {
         return arrayToReturn;
     }
 
-    public boolean containsDuplicate (int[] n) {
+    public boolean containsDuplicate(int[] n) {
         for (int i = 0; i < n.length; i++) {
             for (int j = 0; j < i; j++) {
-                if (n[i] == n[j]){
+                if (n[i] == n[j]) {
                     return true;
                 }
             }
@@ -40,22 +41,22 @@ public class Library {
         return false;
     }
 
-    public double calculateAverage (double[] n){
-        double sum = 0.0;
+    public int calculateAverage(int[] n) {
+        int sum = 0;
         for (int i = 0; i < n.length; i++) {
-           sum = sum + n[i];
+            sum = sum + n[i];
         }
-        return sum/n.length;
+        return sum / n.length;
     }
 
-    public double[] lowestAverageTemp(double[][] n){
+    public int[] lowestAverageTemp(int[][] n) {
         int arrayIndex = 0;
 
-        double minAverage = calculateAverage(n[arrayIndex]);
+        int minAverage = calculateAverage(n[arrayIndex]);
 
         for (int i = 1; i < n.length; i++) {
-            double tempAverage = calculateAverage(n[i]);
-            if(tempAverage < minAverage) {
+            int tempAverage = calculateAverage(n[i]);
+            if (tempAverage < minAverage) {
                 minAverage = tempAverage;
                 arrayIndex = i;
             }
@@ -63,4 +64,61 @@ public class Library {
         return n[arrayIndex];
     }
 
+
+    // Use a hashset of type integer to track all unique temps seen
+    // Iterate from min to the max temp and create a string containing any temp not seen during the month.
+    //return that string
+    public String minMaxTemp(int[][] n) {
+
+        HashSet<Integer> temps = new HashSet<>();
+        int maxTemp = -1;
+        int minTemp = 99;
+        for (int[] array : n) {
+            for (int value : array) {
+                temps.add(value);
+                if (value > maxTemp) {
+                    maxTemp = value;
+                }
+                if (value < minTemp) {
+                    minTemp = value;
+                }
+            }
+        }
+        String response = "High: " + maxTemp + "\n" + "Low: " + minTemp + "\n";
+
+        for (int i = minTemp; i < maxTemp; i++) {
+            if (!temps.contains(i)) {
+                response += "Never saw temperature: " + i + "\n";
+            }
+        }
+        return response;
+    }
+
+    public String tally(String n){
+        ArrayList<String> votes = new HashSet<>();
+
+        for (value : n) {
+            votes.add(value);
+            if()
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
