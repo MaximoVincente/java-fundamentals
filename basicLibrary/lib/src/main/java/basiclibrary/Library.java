@@ -48,15 +48,15 @@ public class Library {
         return sum/n.length;
     }
 
-    public int[] LowestAverageTemp(int[][] n){
+    public double[] lowestAverageTemp(double[][] n){
         int arrayIndex = 0;
 
-        double lowAverage = average(n[arrayIndex]);
+        double minAverage = calculateAverage(n[arrayIndex]);
 
         for (int i = 1; i < n.length; i++) {
-            double tempAverage = average(n[i]);
-            if(tempAverage < lowAverage) {
-                lowAverage = tempAverage;
+            double tempAverage = calculateAverage(n[i]);
+            if(tempAverage < minAverage) {
+                minAverage = tempAverage;
                 arrayIndex = i;
             }
         }

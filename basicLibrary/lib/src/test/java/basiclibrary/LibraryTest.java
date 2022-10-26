@@ -37,15 +37,26 @@ class LibraryTest {
 
     }
 
-    @Test
-    void averageOfArray() {
-        double [] averageArray = {22};
-
+    @Test void averageOfArray() {
         Library sut = new Library();
+        double[] result = {3, 5, 9};
+        double averageResult = sut.calculateAverage(result);
+        System.out.println(averageResult);
+        assertTrue(averageResult == 5.666666666666667);
+    }
 
-        double averageResult = sut.calculateAverage(averageArray);
-        assertEquals(averageResult == averageArray);
-
+    @Test
+    void minAverageArray() {
+        Library sut = new Library();
+        double[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        double[] newArr =   {55, 54, 60, 53, 59, 57, 61};
+        double[] result = sut.lowestAverageTemp(weeklyMonthTemperatures);
+        assertArrayEquals(result, newArr);
     }
 
 }
