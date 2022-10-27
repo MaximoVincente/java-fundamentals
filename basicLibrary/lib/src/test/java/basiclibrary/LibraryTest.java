@@ -69,7 +69,7 @@ class LibraryTest {
                 {55, 54, 60, 53, 59, 57, 61},
                 {65, 56, 55, 52, 55, 62, 57}
         };
-        String response = "High: 72" + "\n" + "Low: 51" + "\n" + "Never saw temperature: 63" + "\n" + "Never saw temperature: 67" + "\n" + "Never saw temperature: 68" + "\n" + "Never saw temperature: 69";
+        String response = "High: 72" + "\n" + "Low: 51" + "\n" + "Never saw temperature: 63" + "\n" + "Never saw temperature: 67" + "\n" + "Never saw temperature: 68" + "\n" + "Never saw temperature: 69" + "\n";
         String result = sut.minMaxTemp(weeklyMonthTemperatures);
         assertEquals(result, response);
     }
