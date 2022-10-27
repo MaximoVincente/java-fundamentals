@@ -59,7 +59,6 @@ class LibraryTest {
         int[] result = sut.lowestAverageTemp(weeklyMonthTemperatures);
         assertArrayEquals(result, newArr);
     }
-
     @Test
     void minMaxTemperatures() {
         Library sut = new Library();
@@ -73,5 +72,4 @@ class LibraryTest {
         String result = sut.minMaxTemp(weeklyMonthTemperatures);
         assertEquals(result, response);
     }
-
 }

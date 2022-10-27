@@ -73,6 +73,7 @@ public class Library {
         HashSet<Integer> temps = new HashSet<>();
         int maxTemp = -1;
         int minTemp = 99;
+        //iterate through matrix
         for (int[] array : n) {
             for (int value : array) {
                 temps.add(value);

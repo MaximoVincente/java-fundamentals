@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws IOException {
+        //Path to file to read
         Path gatesFile = Paths.get("app/src/main/resources/gates.js");
         linter(gatesFile);
     }
@@ -18,10 +19,10 @@ public class App {
         Scanner scanner = new Scanner(gatesFile);
         int counter = 0;
         int lineCount = 0;
-
         while(scanner.hasNextLine()){
             lineCount++;
             String line = scanner.nextLine();
+            //Conditions for linter
             if(!line.endsWith(";")){
                 if (line.endsWith("{") || line.endsWith("}") || line.endsWith("else") || line == "" || line.contains("if")){
                 }
