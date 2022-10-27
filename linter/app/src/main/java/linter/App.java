@@ -24,7 +24,9 @@ public class App {
             String line = scanner.nextLine();
             //Conditions for linter
             if(!line.endsWith(";")){
-                if (line.endsWith("{") || line.endsWith("}") || line.endsWith("else") || line == "" || line.contains("if")){
+                if (line.endsWith("{") || line.endsWith("}")) {
+                    if (line.endsWith("else") || line == "" || line.contains("if")){
+                    }
                 }
                 else{
                     counter++;
