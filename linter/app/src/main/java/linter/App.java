@@ -20,7 +20,6 @@ public class App {
         Scanner scanner = new Scanner(gatesFile);
         int counter = 0;
         int lineCount = 0;
-
         while(scanner.hasNextLine()){
             lineCount++;
             String line = scanner.nextLine();
@@ -35,5 +34,4 @@ public class App {
         }
         return counter;
     }
-
 }
