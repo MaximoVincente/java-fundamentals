@@ -94,16 +94,32 @@ public class Library {
         return response;
     }
 
-    public String tally(String n){
-        ArrayList<String> votes = new HashSet<>();
-
-        for (value : n) {
-            votes.add(value);
-            if()
+    public String tally(String vote[]){
+        Map<String, Integer> votes = new HashMap<String, Integer>();
+        for (String el : vote) {
+            if (votes.keySet().contains(el))
+                votes.put(el, votes.get(el) + 1);
+            else
+                votes.put(el, 1);
         }
-    }
 
+        int maxVal = 0;
+        String winner = "";
+        for (Map.Entry<String, Integer> entry : votes.entrySet()) {
+            String key = entry.getKey();
+            Integer val = entry.getValue();
+            if (val > maxVal) {
+                maxVal = val;
+                winner = key;
+            }
+            else if (val == maxVal && winner.compareTo(key) > 0)
+                winner = key;
+        }
+        String response = winner + "received the most votes!";
+        return response;
+    }
 }
+
 
 
 
