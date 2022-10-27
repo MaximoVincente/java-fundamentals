@@ -9,12 +9,10 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class App {
-
     public static void main(String[] args) throws IOException {
         Path gatesFile = Paths.get("app/src/main/resources/gates.js");
         linter(gatesFile);
     }
-
     public static int linter (Path gatesFile) throws IOException {
 
         Scanner scanner = new Scanner(gatesFile);
@@ -35,5 +33,4 @@ public class App {
         }
         return counter;
     }
-
 }
