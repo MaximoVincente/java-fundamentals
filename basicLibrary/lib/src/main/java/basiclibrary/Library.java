@@ -68,7 +68,7 @@ public class Library {
     // Use a hashset of type integer to track all unique temps seen
     // Iterate from min to the max temp and create a string containing any temp not seen during the month.
     //return that string
-    public String minMaxTemp(int[][] n) {
+    public String minMaxTemp(int[][] n ) {
 
         HashSet<Integer> temps = new HashSet<>();
         int maxTemp = -1;
