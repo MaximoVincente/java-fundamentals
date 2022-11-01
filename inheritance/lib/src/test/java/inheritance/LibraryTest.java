@@ -16,19 +16,22 @@ class LibraryTest {
     }
 
     @Test void dollarSigns() {
-        Restaurant setName = new Restaurant("Dim Sum Garden", 5, "$$");
+        Restaurant setName = new Restaurant("Dim Sum Garden", 5.0, "$$");
         System.out.println(setName);
+        assert(setName.toString().equals("Name: Dim Sum Garden Stars: 5.0 Dollar Signs: $$"));
     }
 
     @Test void sendReview() {
-        Review setAuthor = new Review(4, "Best Spicy Soup Dumplings in Philly!", "Mr. Foodie");
+        Review setAuthor = new Review(4.0, "Best Spicy Soup Dumplings in Philly!", "Mr. Foodie");
         System.out.println(setAuthor);
+        assert (setAuthor.toString().equals("Star Rating: 4.0 Review: Best Spicy Soup Dumplings in Philly! Author: Mr. Foodie"));
     }
 
     @Test void makeReview() {
         Restaurant info = new Restaurant("Standard Tap", 5, "$$");
         Review review = new Review(5, "You can't go wrong with anything in the menu!", "Mehtab");
         info.addReview(review);
-        assert(review.toString().equals("{You can't go wrong with anything in the menu!, Mehtab}"));
+        System.out.println(review);
+        assert(review.toString().equals("Star Rating: 5.0 Review: You can't go wrong with anything in the menu! Author: Mehtab"));
     }
 }

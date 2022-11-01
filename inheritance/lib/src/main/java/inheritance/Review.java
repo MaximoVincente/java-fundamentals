@@ -43,6 +43,6 @@ public class Review  {
 
     @Override
     public String toString() {
-        return   "Review: " + getBody() + "\n" + "Rating: " + getStarRating() + "\n" + " Author: " + getAuthor();
+        return  "Star Rating: " + getStarRating() + " Review: " + getBody() + " Author: " + getAuthor();
     }
 }
