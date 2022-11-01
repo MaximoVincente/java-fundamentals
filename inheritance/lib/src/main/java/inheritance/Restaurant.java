@@ -11,12 +11,13 @@ public class Restaurant {
    private double stars;
    private String dollarSign;
 
-   private ArrayList<Review> review = new ArrayList<>();
-
+   private ArrayList<Review> userReview;
+   public int reviewCounter = 0;
     public Restaurant(String name, double stars, String dollarSign) {
         this.name = name;
         this.stars = stars;
         this.dollarSign = dollarSign;
+        userReview = new ArrayList<>();
     }
 
     public String getName() {
@@ -45,12 +46,23 @@ public class Restaurant {
         this.dollarSign = dollarSign;
     }
 
-    @Override
-    public String toString() {
-        return "Name: " + this.getName() + "\n" + " Stars: " + this.getStars() + "\n" + " Dollar Signs: " + this.getDollarSign();
+    public int getReviewCounter() {
+        return reviewCounter;
     }
 
-    public void addReview() {
-        return
+    public void setReviewCounter(int reviewCounter) {
+        this.reviewCounter = reviewCounter;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + this.getName() + " Stars: " + this.getStars() + " Dollar Signs: " + this.getDollarSign();
+    }
+
+    public void addReview(Review review) {
+        if (!userReview.contains(review)){
+            userReview.add(review);
+            reviewCounter++;
+        }
     }
 }
