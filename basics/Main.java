@@ -3,8 +3,6 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
-
-
 public class Main {
     public static String plurarizeAnimal(String animal, int count) {
 
