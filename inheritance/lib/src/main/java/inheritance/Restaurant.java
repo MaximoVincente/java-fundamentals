@@ -11,13 +11,13 @@ public class Restaurant {
    private double stars;
    private String dollarSign;
 
-   private ArrayList<Review> userReview;
+   private ArrayList<Review> userRestaurantReview;
    public int reviewCounter = 0;
     public Restaurant(String name, double stars, String dollarSign) {
         this.name = name;
         this.stars = stars;
         this.dollarSign = dollarSign;
-        userReview = new ArrayList<>();
+        userRestaurantReview = new ArrayList<>();
     }
 
     public String getName() {
@@ -60,9 +60,11 @@ public class Restaurant {
     }
 
     public void addReview(Review review) {
-        if (!userReview.contains(review)){
-            userReview.add(review);
+        if (!userRestaurantReview.contains(review)){
+            userRestaurantReview.add(review);
             reviewCounter++;
         }
     }
+
+
 }

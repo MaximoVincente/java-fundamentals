@@ -34,4 +34,54 @@ class LibraryTest {
         System.out.println(review);
         assert(review.toString().equals("Star Rating: 5.0 Review: You can't go wrong with anything in the menu! Author: Mehtab"));
     }
+
+    @Test void testShop() {
+        Shop sut = new Shop("Snow Peak", "Outdoors Store", "$$$$");
+        System.out.println(sut);
+        assert(sut.toString().equals("Name: Snow Peak Description: Outdoors Store Dollar Signs: $$$$"));
+    }
+
+    @Test
+    void testShopReview() {
+        Review sut = new Review(5.0, "The Takibi grill/fire pit is my favorite camping gear!", "Rachel");
+        System.out.println(sut);
+        assert(sut.toString().equals("Star Rating: 5.0 Review: The Takibi grill/fire pit is my favorite camping gear! Author: Rachel"));
+    }
+
+    @Test
+    void testTheater(){
+        Theater sut = new Theater("Riar Cinema");
+        System.out.println(sut);
+        assert(sut.toString().equals("Theater: Riar Cinema"));
+    }
+
+    @Test
+    void testTheaterReview(){
+        Review sut = new Review(4.0, "Great theater, but sometimes the popcorn are a little too salty", "Wally");
+        System.out.println(sut);
+        assert(sut.toString().equals("Star Rating: 4.0 Review: Great theater, but sometimes the popcorn are a little too salty Author: Wally"));
+    }
+
+    @Test
+    void testToAddMovie() {
+        Theater sut = new Theater("Wally Theater");
+        sut.addMovie("Wall-E");
+        assertEquals("[Wall-E]", sut.getMovieShowings().toString());
+    }
+
+    @Test
+    void testToRemoveThenAddReview() {
+        Theater sut = new Theater("Gypsy Cinema");
+        sut.addMovie("A");
+        sut.addMovie("B");
+        sut.removeMovie("A", "C");
+        assertEquals("[B, C]", sut.getMovieShowings().toString());
+    }
+
+    @Test
+    void testMovieNameReview() {
+        Theater sat = new Theater("Mmm");
+        MovieReview sut = new MovieReview("A", 4, "andewf", "Amsd");
+        sat.addTheaterReview(sut);
+    }
 }
