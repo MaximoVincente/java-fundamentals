@@ -7,6 +7,5 @@ class MovieReview extends Review{
     MovieReview(String movieName, double starRating, String body, String author){
         super(starRating, body, author);
         this.movieName = movieName;
-
     }
 }

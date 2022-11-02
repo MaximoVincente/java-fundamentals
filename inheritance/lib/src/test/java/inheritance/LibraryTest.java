@@ -77,7 +77,6 @@ class LibraryTest {
         sut.removeMovie("A", "C");
         assertEquals("[B, C]", sut.getMovieShowings().toString());
     }
-
     @Test
     void testMovieNameReview() {
         Theater sat = new Theater("Mmm");

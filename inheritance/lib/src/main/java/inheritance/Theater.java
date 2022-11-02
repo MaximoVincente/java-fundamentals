@@ -9,7 +9,6 @@ public class Theater {
     private ArrayList<Review> userTheaterReview;
     public int reviewCounter = 0;
 
-
     public Theater(String name) {
         this.name = name;
         movieShowings = new ArrayList<>();
@@ -61,5 +60,4 @@ public class Theater {
     public String toString(){
         return "Theater: " + this.getName() ;
     }
-
 }
